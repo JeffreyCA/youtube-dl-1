@@ -3251,7 +3251,7 @@ def intlist_to_bytes(xs):
 if sys.platform == 'win32':
     import ctypes.wintypes
     import msvcrt
-
+    '''
     class OVERLAPPED(ctypes.Structure):
         _fields_ = [
             ('Internal', ctypes.wintypes.LPVOID),
@@ -3301,6 +3301,7 @@ if sys.platform == 'win32':
         if not UnlockFileEx(handle, 0,
                             whole_low, whole_high, f._lock_file_overlapped_p):
             raise OSError('Unlocking file failed: %r' % ctypes.FormatError())
+    '''
 
 else:
     # Some platforms, such as Jython, is missing fcntl
